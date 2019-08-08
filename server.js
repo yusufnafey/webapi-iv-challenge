@@ -1,10 +1,8 @@
 const express = require("express");
 const server = express();
 
-server.use(express.json());
-
 server.get("/", (req, res) => {
-  res.send({ message: "hello" });
+  res.status(200).json({ secretMessage: process.env.MESSAGE });
 });
 
 module.exports = server;
